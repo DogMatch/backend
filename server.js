@@ -18,7 +18,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {//verifies db is connected
 });
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3333);
 app.listen(app.get('port'), function() {
   console.log("Port is running on port: %d",  app.get('port'));
 });
