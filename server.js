@@ -10,15 +10,17 @@ app.use(bodyParser.json);
 app.use(bodyParser.urlencoded({
   extended:true
 }));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/app'));
 
-mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/dogmatch');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {//verifies db is connected
-});
+//require('./routes/users_routes')(app);
 
-app.set('port', process.env.PORT || 3333);
-app.listen(app.get('port'), function() {
-  console.log("Port is running on port: %d",  app.get('port'));
+//mongoose.connect('mongodb://localhost/dogmatch');
+//var db = mongoose.connection;
+//db.on('error', console.error.bind(console, 'connection error:'));
+//db.once('open', function() {//verifies db is connected
+//});
+
+//app.set('port', 3000);
+app.listen(3000, function() {
+  console.log("Port is running on port: %d", 3000);
 });
